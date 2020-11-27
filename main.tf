@@ -8,8 +8,8 @@ resource "azurerm_resource_group" "myresourcegroup" {
 
   tags = {
     environment = "Production"
-    Department  = "devops"
     Billable = "true"
+    Department  = "devops"
   }
 }
 
@@ -124,7 +124,11 @@ resource "azurerm_virtual_machine" "catapp" {
     disable_password_authentication = false
   }
 
-  tags = {}
+  tags = {
+    environment = "Production"
+    Billable = "true"
+    Department  = "devops"
+  }
 }
 
 # We're using a little trick here so we can run the provisioner without
